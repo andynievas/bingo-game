@@ -1,0 +1,81 @@
+
+header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.App {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 40px;
+}
+
+.Tablero {
+  display: flex;
+  flex-direction: column;
+  background-color: gainsboro;
+  padding: 30px;
+
+  position: relative;
+}
+
+.Tablero .fila {
+  display: flex;
+}
+
+.Numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 40px;
+  margin: 5px;
+  background-color: gray;
+  border-radius: 16px;
+  color: aliceblue;
+  font-size: x-large;
+}
+
+.Tablero .Numero.selected {
+  background-color: orangered;
+}
+
+.CurrentNumber {
+  padding-left: 30px;
+}
+
+.CurrentNumber>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: orangered;
+  border-radius: 20px;
+  min-width: 400px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.CurrentNumber div h3.numero {
+  color: aliceblue;
+  font-size: 200px;
+}
+
+
+#current-number-pop-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#current-number-pop-up .CurrentNumber div h3.numero {
+  color: aliceblue;
+  font-size: 260px;
+}
