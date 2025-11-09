@@ -1,11 +1,13 @@
-function CurrentNumber({ number, newRandomNumber, reset }) {
+function CurrentNumber({ number, numberInTablero, newRandomNumber, reset }) {
   return (
-    <div className="CurrentNumber">
+    <div className={`CurrentNumber ${numberInTablero ? "smaller" : ""}`}>
       <div>
         <h3 className="numero">{number ? String(number) : " -- "}</h3>
       </div>
 
-      <button onClick={newRandomNumber}>Nuevo numero aleatorio</button>
+      <button onClick={numberInTablero ? null : newRandomNumber}>
+        Nuevo numero aleatorio
+      </button>
 
       <button onClick={reset}>Reiniciar</button>
     </div>

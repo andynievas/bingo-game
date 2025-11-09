@@ -57,12 +57,13 @@ header {
   height: 300px;
   margin-bottom: 20px;
 }
-
 .CurrentNumber div h3.numero {
   color: aliceblue;
   font-size: 200px;
 }
-
+.CurrentNumber.smaller>div {
+  background-color: aliceblue;
+}
 
 #current-number-pop-up {
   position: absolute;
@@ -74,6 +75,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: rgba(240,248,255,0.6);
 }
 #current-number-pop-up .CurrentNumber div h3.numero {
   color: aliceblue;

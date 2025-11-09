@@ -6,20 +6,6 @@ import CurrentNumber from "./components/CurrentNumber/CurrentNumber";
 const min = 1;
 const max = 90;
 
-// const initialNums = [];
-
-// for (let index_a = 0; index_a < 9; index_a++) {
-//   const row = [];
-//   for (let index_b = 0; index_b < 10; index_b++) {
-//     row.push({
-//       number: String(index_a * 10 + index_b + 1).padStart(2, "0"),
-//       selected: false,
-//     });
-//   }
-
-//   initialNums.push(row);
-// }
-
 const initialNums = new Array(9).fill("-").map((row, index_a) => {
   return new Array(10).fill("-").map((_, index_b) => ({
     number: String(index_a * 10 + index_b + 1).padStart(2, "0"),
@@ -37,6 +23,7 @@ function App() {
   const [selectedNumbers, setSelectedNumbers] = useState(initialNums);
   // const [lastThreeSelected, setLastThreeSelected] = useState([]);
   const [number, setNumber] = useState(null);
+  const [numberInTablero, setNumberInTablero] = useState(null);
   const [totalSelectedNumbers, setTotalSelectedNumbers] = useState(0);
 
   const numIsValid = (numero) => {
@@ -66,11 +53,6 @@ function App() {
     }
   };
 
-  // Comando para ver pids
-  // ps aux | grep node
-
-  // ultimo pid: 21853
-
   const selectNewNumber = () => {
     if (totalSelectedNumbers >= 90) {
       return;
@@ -92,6 +74,10 @@ function App() {
     });
 
     setNumber(numero);
+    setNumberInTablero(numero);
+    setTimeout(() => {
+      setNumberInTablero(null);
+    }, 3000);
 
     setTotalSelectedNumbers((prev) => prev + 1);
 
@@ -115,9 +101,13 @@ function App() {
         <h1>BINGO</h1>
       </header>
       <div className="App">
-        <Tablero selectedNumbers={selectedNumbers} currentNumber={number} />
+        <Tablero
+          selectedNumbers={selectedNumbers}
+          numberInTablero={numberInTablero}
+        />
         <CurrentNumber
           number={number}
+          numberInTablero={numberInTablero}
           newRandomNumber={selectNewNumber}
           reset={restartGame}
         />

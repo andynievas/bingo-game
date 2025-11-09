@@ -6,7 +6,7 @@ function Numero({ number, selected }) {
   );
 }
 
-function Tablero({ selectedNumbers, currentNumber }) {
+function Tablero({ selectedNumbers, numberInTablero }) {
   return (
     <div className="Tablero">
       {selectedNumbers.map((row) => {
@@ -19,15 +19,18 @@ function Tablero({ selectedNumbers, currentNumber }) {
         );
       })}
 
-      <div id="current-number-pop-up">
-        <div className="CurrentNumber">
-          <div>
-            <h3 className="numero">
-              {currentNumber ? String(currentNumber) : " -- "}
-            </h3>
+      {numberInTablero && (
+        <div
+          id="current-number-pop-up"
+          className={`current-number-pop-up ${numberInTablero ? "andy" : "das"}`}
+        >
+          <div className="CurrentNumber">
+            <div>
+              <h3 className="numero">{String(numberInTablero)}</h3>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
