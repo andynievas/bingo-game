@@ -54,6 +54,9 @@ function App() {
   };
 
   const selectNewNumber = () => {
+    if (numberInTablero) {
+      return;
+    }
     if (totalSelectedNumbers >= 90) {
       return;
     }
@@ -76,13 +79,9 @@ function App() {
     setNumber(numero);
 
     setLastThreeSelected((prev) => {
-      if (prev.length < 3) {
-        return [...prev, numero];
-      } else {
-        const newLastThree = [...prev, numero];
-        newLastThree.shift();
-        return newLastThree;
-      }
+      const newLastThree = [numero, ...prev];
+      if (prev.length >= 3) newLastThree.pop();
+      return newLastThree;
     });
 
     setNumberInTablero(numero);

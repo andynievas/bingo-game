@@ -25,11 +25,14 @@ function CurrentNumber({
         })}
       </div>
 
-      <button onClick={numberInTablero ? null : newRandomNumber}>
-        Nuevo numero aleatorio
+      <button
+        className="random"
+        onClick={numberInTablero ? null : newRandomNumber}
+      >
+        Sortear
       </button>
 
-      <button onClick={reset}>Reiniciar</button>
+      {/* <button className="reset" onClick={reset}>Reiniciar</button> */}
     </div>
   );
 }

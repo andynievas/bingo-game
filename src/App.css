@@ -72,6 +72,22 @@ header {
   margin-bottom: 30px;
 }
 
+.CurrentNumber button {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 20px;
+  color:aliceblue;
+  font-size: x-large;
+  font-weight: 700;
+  cursor: pointer;
+}
+.CurrentNumber button.random {
+  background-color:cornflowerblue;
+}
+.CurrentNumber button.reset {
+  background-color:lightgray;
+}
+
 #current-number-pop-up {
   position: absolute;
   top: 0;
