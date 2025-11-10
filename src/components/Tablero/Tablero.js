@@ -25,7 +25,7 @@ function Tablero({ selectedNumbers, numberInTablero }) {
           className={`current-number-pop-up ${numberInTablero ? "andy" : "das"}`}
         >
           <div className="CurrentNumber">
-            <div>
+            <div className="current-number-container">
               <h3 className="numero">{String(numberInTablero)}</h3>
             </div>
           </div>

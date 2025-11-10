@@ -39,7 +39,7 @@ header {
   font-size: x-large;
 }
 
-.Tablero .Numero.selected {
+.Numero.selected {
   background-color: orangered;
 }
 
@@ -47,7 +47,7 @@ header {
   padding-left: 30px;
 }
 
-.CurrentNumber>div {
+.CurrentNumber>div.current-number-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,12 +57,19 @@ header {
   height: 300px;
   margin-bottom: 20px;
 }
-.CurrentNumber div h3.numero {
+.CurrentNumber div.current-number-container h3.numero {
   color: aliceblue;
   font-size: 200px;
 }
-.CurrentNumber.smaller>div {
+.CurrentNumber.smaller>div.current-number-container {
   background-color: aliceblue;
+}
+.CurrentNumber>div#last-three-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #current-number-pop-up {

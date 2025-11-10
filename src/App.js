@@ -21,7 +21,7 @@ const newRandomNumber = () => {
 
 function App() {
   const [selectedNumbers, setSelectedNumbers] = useState(initialNums);
-  // const [lastThreeSelected, setLastThreeSelected] = useState([]);
+  const [lastThreeSelected, setLastThreeSelected] = useState([]);
   const [number, setNumber] = useState(null);
   const [numberInTablero, setNumberInTablero] = useState(null);
   const [totalSelectedNumbers, setTotalSelectedNumbers] = useState(0);
@@ -74,6 +74,17 @@ function App() {
     });
 
     setNumber(numero);
+
+    setLastThreeSelected((prev) => {
+      if (prev.length < 3) {
+        return [...prev, numero];
+      } else {
+        const newLastThree = [...prev, numero];
+        newLastThree.shift();
+        return newLastThree;
+      }
+    });
+
     setNumberInTablero(numero);
     setTimeout(() => {
       setNumberInTablero(null);
@@ -87,6 +98,7 @@ function App() {
   const restartGame = () => {
     setSelectedNumbers(initialNums);
     setNumber(null);
+    setLastThreeSelected([]);
     setTotalSelectedNumbers(0);
   };
 
@@ -106,6 +118,7 @@ function App() {
           numberInTablero={numberInTablero}
         />
         <CurrentNumber
+          lastThreeSelected={lastThreeSelected}
           number={number}
           numberInTablero={numberInTablero}
           newRandomNumber={selectNewNumber}
