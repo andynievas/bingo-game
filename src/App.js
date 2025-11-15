@@ -101,14 +101,21 @@ function App() {
     setTotalSelectedNumbers(0);
   };
 
+  const pageStyles = {
+    minWidth: "1300px",
+    minHeight: "100vh",
+    overflow: "auto",
+  };
+
+  const customColor = window.localStorage.getItem("background-color");
+
+  if (customColor) {
+    pageStyles.backgroundColor = customColor;
+  }
+
   return (
-    <div
-      style={{
-        minWidth: "1300px",
-        overflow: "auto",
-      }}
-    >
-      <header>
+    <div style={pageStyles}>
+      <header style={customColor ? { color: "white" } : {}}>
         <h1>BINGO</h1>
       </header>
       <div className="App">

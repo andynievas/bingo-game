@@ -16,9 +16,8 @@ header {
 .Tablero {
   display: flex;
   flex-direction: column;
-  background-color: gainsboro;
+  background-color: rgba(120, 120, 120,0.4);
   padding: 30px;
-
   position: relative;
 }
 
